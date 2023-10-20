@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.stack_overflow_clone"
+3    package="com.example.errorByte"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
@@ -22,7 +22,7 @@
 19-->[androidx.core:core:1.6.0] C:\Users\Tirth\.gradle\caches\transforms-3\acbce933e4b464a5224ed377a62db1f5\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 20        android:debuggable="true"
 21        android:icon="@mipmap/ic_launcher"
-22        android:label="stack_overflow_clone" >
+22        android:label="ErrorByte" >
 23        <activity
 24            android:name="com.example.stack_overflow_clone.MainActivity"
 25            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.stack_overflow_clone"
+    package="com.example.errorByte"
     android:versionCode="1"
     android:versionName="1.0.0" >
 
@@ -19,7 +19,7 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="stack_overflow_clone" >
+        android:label="ErrorByte" >
         <activity
             android:name="com.example.stack_overflow_clone.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

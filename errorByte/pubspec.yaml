@@ -1,0 +1,48 @@
+name: stack_overflow_clone
+description: A new Flutter project.
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  animate_do: ^2.1.0
+  shimmer_animation: ^2.1.0+1
+  flutter_svg: ^1.1.5
+  async_button: ^1.0.0-beta.1+1
+  flutter_slidable: ^2.0.0
+  flutter_launcher_icons: ^0.13.1
+  provider: ^6.0.3
+  flutter_secure_storage: ^6.0.0
+  dio: ^4.0.6
+  url_launcher: ^6.1.6
+  flutter_localizations:
+    sdk: flutter
+
+  intl: 0.18.1
+  json_annotation: ^4.8.0
+  json_serializable: ^6.6.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  build_runner: ^2.3.3
+
+flutter_icon:
+  android: true
+  image_path: "assets/images/icon3.png"
+
+flutter:
+  generate: true
+  uses-material-design: true
+
+  assets:
+    - assets/images/
