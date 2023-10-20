@@ -22,9 +22,7 @@ class MyApp extends StatelessWidget with BaseSingleton {
     return MaterialApp(
       title: constants.appTitle,
       theme: theme.themeData,
-      debugShowCheckedModeBanner: constants.debugShowCheckedModeBanner,
-      localizationsDelegates: constants.localizationsDelegates,
-      supportedLocales: constants.supportedLocales,
+      debugShowCheckedModeBanner: false,
       navigatorKey: constants.navigatorKey,
       home: const SplashView(),
     );
