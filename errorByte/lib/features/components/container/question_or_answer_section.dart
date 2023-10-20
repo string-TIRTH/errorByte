@@ -18,7 +18,7 @@ class QuestionOrAnswerSection extends StatelessWidget with BaseSingleton {
       padding: context.padding2x,
       decoration: SpecialContainerDecoration(
         context: context,
-        color: colors.grey3,
+        color: Colors.greenAccent.shade400
       ),
       child: Text(content),
     );

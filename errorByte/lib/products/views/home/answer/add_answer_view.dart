@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:async_button/async_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import '../../../../uikit/button/special_async_button.dart';
 
@@ -43,7 +42,7 @@ class AddAnswerView extends StatelessWidget with BaseSingleton {
   AppBar _appBar(BuildContext context) {
     return AppBar(
       title: FadeInDown(
-        child: Text(AppLocalizations.of(context)!.addAnswer),
+        child: Text("Add Answer"),
       ),
     );
   }
@@ -67,7 +66,7 @@ class AddAnswerView extends StatelessWidget with BaseSingleton {
 
   Text _title(BuildContext context) {
     return Text(
-      AppLocalizations.of(context)!.yourAnswer,
+      "Your Answer",
       style: context.textTheme.headline6,
     );
   }
@@ -76,10 +75,10 @@ class AddAnswerView extends StatelessWidget with BaseSingleton {
     return Container(
       decoration: SpecialContainerDecoration(
         context: context,
-        color: colors.orange1,
+        color: Colors.orange.shade100,
       ),
       padding: context.padding2x,
-      child: Text(AppLocalizations.of(context)!.addAnswerInfo),
+      child: Text("Your Answer will be visible to everyone... so make sure you do not violate privacy & policy"),
     );
   }
 
@@ -101,7 +100,7 @@ class AddAnswerView extends StatelessWidget with BaseSingleton {
 
   Text _answerTitle(BuildContext context) {
     return Text(
-      AppLocalizations.of(context)!.contentTitle,
+      "Content",
       style: context.textTheme.subtitle1!.copyWith(
         fontWeight: context.fw700,
       ),
@@ -111,7 +110,7 @@ class AddAnswerView extends StatelessWidget with BaseSingleton {
   DefaultTextFormField _answerField(BuildContext context) {
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.answerLabel,
+      labelText: "Answer",
       controller: _contentController,
     );
   }
@@ -120,7 +119,7 @@ class AddAnswerView extends StatelessWidget with BaseSingleton {
     return SpecialAsyncButton(
       onTap: (btnStateController) async =>
           await _addAnswerOP(btnStateController, context),
-      buttonLabel: AppLocalizations.of(context)!.postYourAnswer,
+      buttonLabel: "Post your answer",
       borderRadius: context.borderRadius2x,
     );
   }

@@ -24,8 +24,8 @@ class MyTheme extends IMyTheme {
 
   AppBarTheme get _appBarTheme {
     return AppBarTheme(
-        iconTheme: IconThemeData(color: colors.black),
-        color: colors.white,
+        iconTheme: IconThemeData(color: Colors.black),
+        color: Colors.white,
         elevation: 0,
         titleTextStyle: texts.textTheme.headline6,
       );
@@ -33,7 +33,7 @@ class MyTheme extends IMyTheme {
 
   SnackBarThemeData get _snackBarTheme {
     return SnackBarThemeData(
-      backgroundColor: colors.blue,
+      backgroundColor: Colors.blue,
     );
   }
 }

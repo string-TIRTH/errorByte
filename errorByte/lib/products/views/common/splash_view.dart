@@ -1,6 +1,5 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
@@ -15,6 +14,7 @@ class SplashView extends StatelessWidget {
   Widget build(BuildContext context) {
     final pv = Provider.of<SplashViewModel>(context, listen: false);
     return Scaffold(
+      backgroundColor: Colors.white,
       body: FutureBuilder(
         future: pv.getToken,
         builder: (_, snapShot) {
@@ -35,8 +35,8 @@ class SplashView extends StatelessWidget {
   FadeInUp _body(BuildContext context) {
     return FadeInUp(
       child: Center(
-        child: SvgPicture.asset(
-          AppLocalizations.of(context)!.iconSvg,
+        child: Image.asset(
+          'assets/images/logo3.png'
         ),
       ),
     );

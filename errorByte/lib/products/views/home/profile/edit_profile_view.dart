@@ -1,8 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:async_button/async_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/base/base_singleton.dart';
 import '../../../../core/extensions/ui_extensions.dart';
@@ -52,7 +50,7 @@ class EditProfileView extends StatelessWidget with BaseSingleton {
   AppBar _appBar(BuildContext context) {
     return AppBar(
       title: FadeInDown(
-        child: Text(AppLocalizations.of(context)!.editProfile),
+        child: Text("Edit Profile"),
       ),
     );
   }
@@ -95,16 +93,14 @@ class EditProfileView extends StatelessWidget with BaseSingleton {
       height: context.dynamicHeight(0.1),
       padding: context.padding1x,
       decoration: SpecialContainerDecoration(context: context),
-      child: SvgPicture.asset(
-        AppLocalizations.of(context)!.iconSvg,
-      ),
+      child: Image.asset('assets/images/icon3.png'),
     );
   }
 
   DefaultTextFormField _nameField(BuildContext context, UserModel user) {
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.nameLabel,
+      labelText: "Name",
       prefixIcon: icons.person,
       initialValue: user.name,
       onChanged: (name) {
@@ -117,7 +113,7 @@ class EditProfileView extends StatelessWidget with BaseSingleton {
   DefaultTextFormField _lastnameField(BuildContext context, UserModel user) {
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.lastnameLabel,
+      labelText: 'Lastname',
       prefixIcon: icons.person,
       initialValue: user.lastname,
       onChanged: (lastname) {
@@ -131,7 +127,7 @@ class EditProfileView extends StatelessWidget with BaseSingleton {
     bool readOnly = true;
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.emailLabel,
+      labelText: "Email",
       prefixIcon: icons.email,
       initialValue: user.email,
       readOnly: readOnly,
@@ -142,7 +138,7 @@ class EditProfileView extends StatelessWidget with BaseSingleton {
     String initialValue = "${user.title}";
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.about,
+      labelText: "About",
       prefixIcon: icons.description,
       initialValue: initialValue,
       onChanged: (title) {
@@ -155,7 +151,7 @@ class EditProfileView extends StatelessWidget with BaseSingleton {
     String initialValue = "${user.place}";
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.place,
+      labelText: "Place",
       prefixIcon: icons.place,
       initialValue: initialValue,
       onChanged: (place) {
@@ -168,7 +164,7 @@ class EditProfileView extends StatelessWidget with BaseSingleton {
     String initialValue = "${user.website}";
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.website,
+      labelText: "Website",
       prefixIcon: icons.language,
       initialValue: initialValue,
       onChanged: (website) {
@@ -182,7 +178,7 @@ class EditProfileView extends StatelessWidget with BaseSingleton {
     return SpecialAsyncButton(
       onTap: (btnStateController) async =>
           await _editProfile(btnStateController, context, pv),
-      buttonLabel: AppLocalizations.of(context)!.saveProfile,
+      buttonLabel: "Save Profile",
       borderRadius: context.borderRadius2x,
     );
   }

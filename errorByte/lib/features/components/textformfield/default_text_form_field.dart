@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'index.dart';
-import '../../../core/theme/color/my_colors.dart';
 
 class DefaultTextFormField extends SpecialTextFormField {
   DefaultTextFormField({
@@ -35,13 +34,13 @@ class DefaultTextFormField extends SpecialTextFormField {
           prefixIcon: prefixIcon,
           initialValue: initialValue,
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: MyColors.instance.grey),
+            borderSide: BorderSide(color: Colors.grey),
           ),
           focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(),
           ),
           errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: MyColors.instance.red),
+            borderSide: BorderSide(color: Colors.red),
           ),
           focusedErrorBorder: const OutlineInputBorder(
             borderSide: BorderSide(),

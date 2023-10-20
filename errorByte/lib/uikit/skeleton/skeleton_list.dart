@@ -50,7 +50,7 @@ class SkeletonList extends StatelessWidget with BaseSingleton {
       width: 60,
       height: 60,
       child: CircleAvatar(
-        backgroundColor: colors.grey4,
+        backgroundColor: Colors.grey.shade400,
       ),
     );
   }

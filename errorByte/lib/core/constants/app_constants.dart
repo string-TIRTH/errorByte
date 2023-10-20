@@ -1,4 +1,3 @@
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
@@ -26,10 +25,8 @@ class AppConstants {
 
   AppConstants.init();
 
-  String get appTitle => "Stack Overflow Clone";
+  String get appTitle => "ErrorByte";
   bool get debugShowCheckedModeBanner => false;
-  get localizationsDelegates => AppLocalizations.localizationsDelegates;
-  get supportedLocales => AppLocalizations.supportedLocales;
   get navigatorKey => NavigationService.navigatorKey;
 
   final List<SingleChildWidget> _providers = [

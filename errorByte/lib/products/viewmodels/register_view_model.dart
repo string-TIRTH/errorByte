@@ -1,7 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:stack_overflow_clone/core/base/base_singleton.dart';
 import 'package:stack_overflow_clone/core/helpers/api.dart';
 
@@ -32,9 +31,9 @@ class RegisterViewModel extends ChangeNotifier with BaseSingleton {
     globals.getAlertDialog(
       context: context,
       result: result,
-      successTitle: AppLocalizations.of(context)!.registerSuccess,
-      fail400Title: AppLocalizations.of(context)!.registerFail,
-      fail500Title: AppLocalizations.of(context)!.registerFail,
+      successTitle: "Register Successful",
+      fail400Title: "SomeThing Went Wrong!",
+      fail500Title: "Register Fail",
       onTap: () => Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(

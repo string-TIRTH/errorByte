@@ -1,6 +1,5 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/base/base_singleton.dart';
 import '../../../../core/extensions/ui_extensions.dart';
@@ -51,9 +50,9 @@ class MyAnswersView extends StatelessWidget with BaseSingleton {
     uiGlobals.showAlertDialog(
       context: context,
       alertEnum: AlertEnum.AREUSURE,
-      contentTitle: AppLocalizations.of(context)!.areYouSure,
-      contentSubtitle: AppLocalizations.of(context)!.deleteAnswerContent,
-      buttonLabel: AppLocalizations.of(context)!.okButton,
+      contentTitle: "Are you sure?",
+      contentSubtitle: "Your answer will be deleted this question.\nAre you sure?",
+      buttonLabel: "OK",
       onTap: () async {
         final pv = Provider.of<AnswerViewModel>(context, listen: false);
         await pv
@@ -65,7 +64,7 @@ class MyAnswersView extends StatelessWidget with BaseSingleton {
           Navigator.pop(context);
         });
       },
-      secondButtonLabel: AppLocalizations.of(context)!.cancelButton,
+      secondButtonLabel: "CANCEL",
     );
   }
 
@@ -80,7 +79,7 @@ class MyAnswersView extends StatelessWidget with BaseSingleton {
   AppBar _appBar(BuildContext context) {
     return AppBar(
       title: FadeInDown(
-        child: Text(AppLocalizations.of(context)!.myAnswers),
+        child: Text("My Answers"),
       ),
     );
   }
@@ -116,7 +115,7 @@ class MyAnswersView extends StatelessWidget with BaseSingleton {
         decoration: SpecialContainerDecoration(context: context),
         alignment: context.alignmentCenter,
         child: Text(
-          AppLocalizations.of(context)!.emptyQuestion,
+          "The questions has not asked yet!",
           style: context.textTheme.headline6,
           textAlign: context.taCenter,
         ),
@@ -130,10 +129,10 @@ class MyAnswersView extends StatelessWidget with BaseSingleton {
       padding: context.padding2x,
       child: DefaultTextFormField(
         context: context,
-        labelText: AppLocalizations.of(context)!.searchLabel,
+        labelText: "Search Question",
         prefixIcon: icons.search,
         filled: filled,
-        fillColor: colors.white,
+        fillColor: Colors.white,
         controller: _answerController,
         onChanged: pv.searchQuestion,
       ),
@@ -147,7 +146,7 @@ class MyAnswersView extends StatelessWidget with BaseSingleton {
     }
     return Container(
       padding: context.padding1x,
-      color: colors.yellow1.withOpacity(0.65),
+      color: Colors.yellow.shade100.withOpacity(0.65),
       child: ListView.separated(
         shrinkWrap: shrinkWrap,
         physics: const NeverScrollableScrollPhysics(),
@@ -207,7 +206,7 @@ class MyAnswersView extends StatelessWidget with BaseSingleton {
       answerTitle,
       style: context.textTheme.subtitle1!.copyWith(
         fontWeight: context.fw600,
-        color: colors.blue6,
+        color: Colors.blue.shade600,
       ),
     );
   }
@@ -219,14 +218,14 @@ class MyAnswersView extends StatelessWidget with BaseSingleton {
           onPressed: () => _goToEditAnswer(context, item),
           icon: Icon(
             Icons.edit,
-            color: colors.blueAccent,
+            color: Colors.blueAccent,
           ),
         ),
         IconButton(
           onPressed: () async => _deleteAnswer(context, item),
           icon: Icon(
             Icons.delete,
-            color: colors.redAccent,
+            color: Colors.redAccent,
           ),
         ),
       ],

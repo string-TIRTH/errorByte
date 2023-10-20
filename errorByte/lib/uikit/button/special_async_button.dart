@@ -33,19 +33,19 @@ class SpecialAsyncButton extends StatelessWidget with BaseSingleton {
       ),
       loadingStyle: AsyncButtonStateStyle(
         style: ElevatedButton.styleFrom(
-          backgroundColor: colors.amber,
+          backgroundColor: Colors.amber,
         ),
         widget: SizedBox.square(
           dimension: 24,
           child: CircularProgressIndicator(
-            color: colors.white,
+            color: Colors.white,
           ),
         ),
       ),
       successStyle: AsyncButtonStateStyle(
         style: ElevatedButton.styleFrom(
-          backgroundColor: colors.green,
-          foregroundColor: colors.white,
+          backgroundColor: Colors.green,
+          foregroundColor: Colors.white,
         ),
         widget: Row(
           mainAxisSize: MainAxisSize.min,
@@ -58,8 +58,8 @@ class SpecialAsyncButton extends StatelessWidget with BaseSingleton {
       ),
       failureStyle: AsyncButtonStateStyle(
         style: ElevatedButton.styleFrom(
-          backgroundColor: colors.redAccent,
-          foregroundColor: colors.white,
+          backgroundColor: Colors.redAccent,
+          foregroundColor: Colors.white,
         ),
         widget: Row(
           mainAxisSize: MainAxisSize.min,

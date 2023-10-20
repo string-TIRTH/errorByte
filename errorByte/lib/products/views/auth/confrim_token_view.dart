@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:async_button/async_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import '../../../core/base/base_singleton.dart';
@@ -48,9 +47,9 @@ class ConfrimTokenView extends StatelessWidget with BaseSingleton {
     uiGlobals.showAlertDialog(
         context: context,
         alertEnum: AlertEnum.SUCCESS,
-        contentTitle: AppLocalizations.of(context)!.success,
-        contentSubtitle: AppLocalizations.of(context)!.validResetPassToken,
-        buttonLabel: AppLocalizations.of(context)!.okButton,
+        contentTitle: "SuccessFul!",
+        contentSubtitle: "You have entered the correct code and you will be redirected to the password change page.",
+        buttonLabel: "OK",
         onTap: () async {
           Navigator.pop(context);
           await Navigator.push(
@@ -66,9 +65,9 @@ class ConfrimTokenView extends StatelessWidget with BaseSingleton {
     uiGlobals.showAlertDialog(
       context: context,
       alertEnum: AlertEnum.ERROR,
-      contentTitle: AppLocalizations.of(context)!.fail,
-      contentSubtitle: AppLocalizations.of(context)!.invalidResetPassToken,
-      buttonLabel: AppLocalizations.of(context)!.okButton,
+      contentTitle: "Error!",
+      contentSubtitle: "Invalid OTP code.\nPlease check email and try again.",
+      buttonLabel: "OK",
     );
   }
 
@@ -96,7 +95,7 @@ class ConfrimTokenView extends StatelessWidget with BaseSingleton {
   AppBar _appBar(BuildContext context) {
     return AppBar(
       title: FadeInDown(
-        child: Text(AppLocalizations.of(context)!.forgotPassword),
+        child: Text("Forgot Password"),
       ),
     );
   }
@@ -147,20 +146,20 @@ class ConfrimTokenView extends StatelessWidget with BaseSingleton {
     double aspectRatio = 7;
     return AspectRatio(
       aspectRatio: aspectRatio,
-      child: SvgPicture.asset(AppLocalizations.of(context)!.logoSvg),
+      child: Image.asset("assets/images/logo3.png"),
     );
   }
 
   Text _title(BuildContext context) {
     return Text(
-      AppLocalizations.of(context)!.verification,
+      "Verification",
       style: context.textTheme.headline6,
     );
   }
 
   Text _subtitle(BuildContext context) {
     return Text(
-      AppLocalizations.of(context)!.otpDesc,
+      "Enter OTP",
       style: context.textTheme.subtitle2!.copyWith(fontWeight: context.fw500),
     );
   }
@@ -212,7 +211,7 @@ class ConfrimTokenView extends StatelessWidget with BaseSingleton {
       width: context.dynamicWidth(0.5),
       child: SpecialButton(
         onTap: () async => await _verifyToken(context),
-        buttonLabel: AppLocalizations.of(context)!.verifyYourToken,
+        buttonLabel: "Verify Your Token",
         borderRadius: context.borderRadius2x,
       ),
     );
@@ -220,7 +219,7 @@ class ConfrimTokenView extends StatelessWidget with BaseSingleton {
 
   Text _resendNewCodeDesc(BuildContext context) {
     return Text(
-      AppLocalizations.of(context)!.receiveCode,
+      "Didn\'t you receive any code?",
       style: context.textTheme.subtitle1!.copyWith(fontWeight: context.fw700),
     );
   }
@@ -230,10 +229,10 @@ class ConfrimTokenView extends StatelessWidget with BaseSingleton {
     return SizedBox(
       width: dynamicWidth,
       child: SpecialAsyncButton(
-        bgColor: colors.orangeAccent2,
+        bgColor: Colors.orangeAccent.shade200,
         onTap: (btnStateController) async =>
             await _resendNewCode(btnStateController, context),
-        buttonLabel: AppLocalizations.of(context)!.resendNewCode,
+        buttonLabel: "Resend New Code",
         borderRadius: context.borderRadius2x,
       ),
     );

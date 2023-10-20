@@ -32,7 +32,7 @@ class ProfileItems extends StatelessWidget with BaseSingleton {
               child: Text(
                 action,
                 style:
-                    context.textTheme.headline6!.copyWith(color: colors.blue),
+                    context.textTheme.headline6!.copyWith(color: Colors.blue),
               ),
             )
           ],

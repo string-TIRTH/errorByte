@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:async_button/async_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../core/base/base_singleton.dart';
@@ -45,7 +44,7 @@ class AskQuestionView extends StatelessWidget with BaseSingleton {
   AppBar _appBar(BuildContext context) {
     return AppBar(
       title: FadeInDown(
-        child: Text(AppLocalizations.of(context)!.askQuestion),
+        child: Text("Ask Question"),
       ),
     );
   }
@@ -73,7 +72,7 @@ class AskQuestionView extends StatelessWidget with BaseSingleton {
 
   Text _description(BuildContext context) {
     return Text(
-      AppLocalizations.of(context)!.askAPublicQuestion,
+      "Ask a public question",
       style: context.textTheme.headline6,
     );
   }
@@ -98,7 +97,7 @@ class AskQuestionView extends StatelessWidget with BaseSingleton {
 
   Text _titleTitle(BuildContext context) {
     return Text(
-      AppLocalizations.of(context)!.titleLabel,
+      "Title",
       style: context.textTheme.subtitle1!.copyWith(
         fontWeight: context.fw700,
       ),
@@ -107,7 +106,7 @@ class AskQuestionView extends StatelessWidget with BaseSingleton {
 
   Text _titleSubtitle(BuildContext context) {
     return Text(
-      AppLocalizations.of(context)!.titleDesc,
+      "Be specific and imagine you’re asking a question to another person.",
       style: context.textTheme.subtitle2,
     );
   }
@@ -117,8 +116,8 @@ class AskQuestionView extends StatelessWidget with BaseSingleton {
     int maxLines = 2;
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.titleLabel,
-      hintText: AppLocalizations.of(context)!.titleHint,
+      labelText: "Title",
+      hintText: "e.g. How to center a div ? XP",
       controller: _titleController,
       validator: (title) => validators.titleCheck(title),
       minLines: minLines,
@@ -146,7 +145,7 @@ class AskQuestionView extends StatelessWidget with BaseSingleton {
 
   Text _contentTitle(BuildContext context) {
     return Text(
-      AppLocalizations.of(context)!.contentTitle,
+      "Content",
       style: context.textTheme.subtitle1!.copyWith(
         fontWeight: context.fw700,
       ),
@@ -155,7 +154,7 @@ class AskQuestionView extends StatelessWidget with BaseSingleton {
 
   Text _contentSubtitle(BuildContext context) {
     return Text(
-      AppLocalizations.of(context)!.contentDesc,
+      "What are the details of your problem?",
       style: context.textTheme.subtitle2,
     );
   }
@@ -165,7 +164,7 @@ class AskQuestionView extends StatelessWidget with BaseSingleton {
     int maxLines = 5;
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.contentLabel,
+      labelText: "Content",
       controller: _contentController,
       validator: (content) => validators.contentCheck(content),
       minLines: minLines,
@@ -178,7 +177,7 @@ class AskQuestionView extends StatelessWidget with BaseSingleton {
       borderRadius: context.borderRadius2x,
       onTap: (btnStateController) async =>
           await _askQuestion(btnStateController, context),
-      buttonLabel: AppLocalizations.of(context)!.reviewYourQuestion,
+      buttonLabel: "Review your question",
     );
   }
 }

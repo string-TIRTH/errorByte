@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 import 'package:stack_overflow_clone/core/extensions/ui_extensions.dart';
-import 'package:stack_overflow_clone/core/theme/color/my_colors.dart';
 
 class SkeletonItem extends AspectRatio {
   SkeletonItem({
@@ -15,7 +14,7 @@ class SkeletonItem extends AspectRatio {
           child: Shimmer(
             child: Container(
               decoration: BoxDecoration(
-                color: MyColors.instance.grey4,
+                color: Colors.grey.shade400,
                 borderRadius: context.borderRadius4x,
               ),
             ),

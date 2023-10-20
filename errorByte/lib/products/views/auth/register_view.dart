@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:async_button/async_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import '../../../uikit/button/special_async_button.dart';
 import '../../../core/base/base_singleton.dart';
@@ -56,7 +55,7 @@ class RegisterView extends StatelessWidget with BaseSingleton {
   AppBar _appBar(BuildContext context) {
     return AppBar(
       title: FadeInDown(
-        child: Text(AppLocalizations.of(context)!.registerAppbarTitle),
+        child: Text("Register"),
       ),
     );
   }
@@ -79,7 +78,7 @@ class RegisterView extends StatelessWidget with BaseSingleton {
       padding: context.padding4x,
       decoration: SpecialContainerDecoration(context: context),
       child: Text(
-        AppLocalizations.of(context)!.registerTitle,
+        "ErrorByte changed my mind!",
         style: context.textTheme.headline5,
         textAlign: TextAlign.center,
       ),
@@ -111,7 +110,7 @@ class RegisterView extends StatelessWidget with BaseSingleton {
   DefaultTextFormField _nameField(BuildContext context) {
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.nameLabel,
+      labelText: "Name",
       prefixIcon: icons.person,
       controller: _nameController,
       validator: (name) => validators.nameCheck(name),
@@ -121,7 +120,7 @@ class RegisterView extends StatelessWidget with BaseSingleton {
   DefaultTextFormField _lastnameField(BuildContext context) {
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.lastnameLabel,
+      labelText: "Lastname",
       prefixIcon: icons.person,
       controller: _lastnameController,
       validator: (lastname) => validators.lastnameCheck(lastname),
@@ -131,7 +130,7 @@ class RegisterView extends StatelessWidget with BaseSingleton {
   DefaultTextFormField _emailField(BuildContext context) {
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.emailLabel,
+      labelText: "Email",
       prefixIcon: icons.email,
       keyboardType: TextInputType.emailAddress,
       controller: _emailController,
@@ -143,7 +142,7 @@ class RegisterView extends StatelessWidget with BaseSingleton {
     bool obscureText = true;
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.passwordLabel,
+      labelText: "Password",
       prefixIcon: icons.lock,
       controller: _passwordController,
       obscureText: obscureText,
@@ -158,7 +157,7 @@ class RegisterView extends StatelessWidget with BaseSingleton {
     bool obscureText = true;
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.passwordLabelV2,
+      labelText: "Confirm Password",
       prefixIcon: icons.lock,
       controller: _passwordV2Controller,
       obscureText: obscureText,
@@ -174,7 +173,7 @@ class RegisterView extends StatelessWidget with BaseSingleton {
       width: double.maxFinite,
       child: SpecialAsyncButton(
         borderRadius: context.borderRadius2x,
-        buttonLabel: AppLocalizations.of(context)!.signUp,
+        buttonLabel: "Sign Up",
         onTap: (btnStateController) async =>
             await _signUp(btnStateController, context),
       ),

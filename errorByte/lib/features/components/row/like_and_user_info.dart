@@ -80,14 +80,14 @@ class LikeAndUserInfo extends StatelessWidget with BaseSingleton {
   Text createdAtText(BuildContext context) {
     return Text(
       createdAt,
-      style: context.textTheme.caption!.copyWith(color: colors.blue6),
+      style: context.textTheme.caption!.copyWith(color: Colors.blueAccent.shade400),
     );
   }
 
   Text userNameText(BuildContext context) {
     return Text(
       username,
-      style: context.textTheme.caption!.copyWith(color: colors.blue8),
+      style: context.textTheme.caption!.copyWith(color: Colors.blueAccent.shade700),
     );
   }
 }

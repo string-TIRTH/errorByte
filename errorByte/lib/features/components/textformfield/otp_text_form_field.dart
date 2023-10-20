@@ -29,16 +29,16 @@ class OtpTextFormField extends StatelessWidget with BaseSingleton {
         LengthLimitingTextInputFormatter(1),
         FilteringTextInputFormatter.digitsOnly,
       ],
-      cursorColor: colors.transparent,
+      cursorColor: Colors.transparent,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: colors.grey),
+          borderSide: BorderSide(color: Colors.grey),
         ),
         focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(),
         ),
         errorBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: colors.red),
+          borderSide: BorderSide(color: Colors.red),
         ),
         focusedErrorBorder: const OutlineInputBorder(
           borderSide: BorderSide(),

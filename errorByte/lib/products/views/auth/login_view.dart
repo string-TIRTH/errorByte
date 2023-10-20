@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:async_button/async_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import '../../../uikit/button/special_async_button.dart';
@@ -74,7 +73,7 @@ class LoginView extends StatelessWidget with BaseSingleton {
 
   FadeInDown _logoSection(BuildContext context) {
     return FadeInDown(
-      child: SvgPicture.asset(AppLocalizations.of(context)!.logoSvg),
+      child: Image.asset("assets/images/logo3.png"),
     );
   }
 
@@ -103,7 +102,7 @@ class LoginView extends StatelessWidget with BaseSingleton {
   DefaultTextFormField _emailField(BuildContext context) {
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.emailLabel,
+      labelText: "Email",
       prefixIcon: icons.email,
       keyboardType: context.keyboardEmailAddress,
       controller: _emailController,
@@ -114,7 +113,7 @@ class LoginView extends StatelessWidget with BaseSingleton {
     bool obscureText = true;
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.passwordLabel,
+      labelText: "Password",
       prefixIcon: icons.lock,
       obscureText: obscureText,
       controller: _passwordController,
@@ -126,7 +125,7 @@ class LoginView extends StatelessWidget with BaseSingleton {
       width: context.maxFinite,
       child: SpecialAsyncButton(
         onTap: (btnStateController) async => _login(context, btnStateController),
-        buttonLabel: AppLocalizations.of(context)!.loginButton,
+        buttonLabel: "Login",
         borderRadius: context.borderRadius2x,
       ),
     );
@@ -138,9 +137,9 @@ class LoginView extends StatelessWidget with BaseSingleton {
       child: TextButton(
         onPressed: () => _forgotPassword(context),
         child: Text(
-          AppLocalizations.of(context)!.forgotPassword,
+          "Forgot Password",
           style: context.textTheme.caption!.copyWith(
-            color: colors.blue6,
+            color: Colors.blue.shade600,
             fontWeight: context.fw700,
           ),
         ),
@@ -160,7 +159,7 @@ class LoginView extends StatelessWidget with BaseSingleton {
 
   Text _signUpDescription(BuildContext context) {
     return Text(
-      AppLocalizations.of(context)!.signUpDesc,
+      "Don\'t have an account",
       style: context.textTheme.subtitle2!.copyWith(),
     );
   }
@@ -169,9 +168,9 @@ class LoginView extends StatelessWidget with BaseSingleton {
     return TextButton(
       onPressed: () => _signUp(context),
       child: Text(
-        AppLocalizations.of(context)!.signUp,
+        "Sign Up",
         style: context.textTheme.subtitle2!.copyWith(
-          color: colors.blue6,
+          color: Colors.blue.shade600,
           fontWeight: context.fw600,
         ),
       ),

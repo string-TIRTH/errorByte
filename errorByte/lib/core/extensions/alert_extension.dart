@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../uikit/alert/special_alert.dart';
 import '../enums/alert_enum.dart';
-import '../theme/color/my_colors.dart';
 
 extension AlertExtension on AlertEnum {
   SpecialAlert getAlert({
@@ -18,8 +17,8 @@ extension AlertExtension on AlertEnum {
       case AlertEnum.SUCCESS:
         return SpecialAlert(
           icon: Icons.check,
-          titleBgColor: MyColors.instance.greenAccent4,
-          circleAvatarBgColor: MyColors.instance.greenAccent7,
+          titleBgColor: Colors.greenAccent.shade400,
+          circleAvatarBgColor: Colors.greenAccent.shade700,
           contentTitle: contentTitle,
           contentSubtitle: contentSubtitle,
           buttonLabel: buttonLabel,
@@ -28,8 +27,8 @@ extension AlertExtension on AlertEnum {
       case AlertEnum.ERROR:
         return SpecialAlert(
           icon: Icons.do_disturb,
-          titleBgColor: MyColors.instance.redAccent4,
-          circleAvatarBgColor: MyColors.instance.redAccent7,
+          titleBgColor: Colors.redAccent.shade400,
+          circleAvatarBgColor: Colors.redAccent.shade700,
           contentTitle: contentTitle,
           contentSubtitle: contentSubtitle,
           buttonLabel: buttonLabel,
@@ -38,8 +37,8 @@ extension AlertExtension on AlertEnum {
       case AlertEnum.WARN:
         return SpecialAlert(
           icon: Icons.error_outline_sharp,
-          titleBgColor: MyColors.instance.amberAccent4,
-          circleAvatarBgColor: MyColors.instance.amberAccent7,
+          titleBgColor:Colors.amberAccent.shade400,
+          circleAvatarBgColor: Colors.amberAccent.shade700,
           contentTitle: contentTitle,
           contentSubtitle: contentSubtitle,
           buttonLabel: buttonLabel,
@@ -48,8 +47,8 @@ extension AlertExtension on AlertEnum {
       case AlertEnum.INFO:
         return SpecialAlert(
           icon: Icons.lightbulb,
-          titleBgColor: MyColors.instance.yellowAccent4,
-          circleAvatarBgColor: MyColors.instance.yellowAccent7,
+          titleBgColor: Colors.yellowAccent.shade400,
+          circleAvatarBgColor: Colors.yellowAccent.shade700,
           contentTitle: contentTitle,
           contentSubtitle: contentSubtitle,
           buttonLabel: buttonLabel,
@@ -58,8 +57,8 @@ extension AlertExtension on AlertEnum {
       case AlertEnum.AREUSURE:
         return SpecialAlert(
           icon: Icons.done_outline_outlined,
-          titleBgColor: MyColors.instance.tealAccent2,
-          circleAvatarBgColor: MyColors.instance.tealAccent7,
+          titleBgColor: Colors.tealAccent.shade400,
+          circleAvatarBgColor: Colors.tealAccent.shade700,
           contentTitle: contentTitle,
           contentSubtitle: contentSubtitle,
           buttonLabel: buttonLabel,

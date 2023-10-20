@@ -5,7 +5,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:stack_overflow_clone/core/base/base_singleton.dart';
 import 'package:stack_overflow_clone/core/helpers/api.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:stack_overflow_clone/products/models/password_model.dart';
 
 import '../views/auth/confrim_token_view.dart';
@@ -40,9 +39,9 @@ class PasswordViewModel extends ChangeNotifier with BaseSingleton {
     globals.getAlertDialog(
       context: context,
       result: result,
-      successTitle: AppLocalizations.of(context)!.sendMailSuccess,
+      successTitle: "Password reset successful.",
       fail400Title: result?.data["message"],
-      fail500Title: AppLocalizations.of(context)!.unsuccessMessage,
+      fail500Title: "Something Went Wrong",
       onTap: () async {
         Navigator.pop(context);
         if (!isAgain) {
@@ -72,9 +71,9 @@ class PasswordViewModel extends ChangeNotifier with BaseSingleton {
     globals.getAlertDialog(
       context: context,
       result: result,
-      successTitle: AppLocalizations.of(context)!.success,
-      fail400Title: AppLocalizations.of(context)!.unsuccessMessage,
-      fail500Title: AppLocalizations.of(context)!.unsuccessMessage,
+      successTitle: "Successful!",
+      fail400Title: "Failed!",
+      fail500Title: "Something Went Wrong",
       onTap: () {
         Navigator.push(
           context,

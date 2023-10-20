@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/extensions/ui_extensions.dart';
-import '../../../core/theme/color/my_colors.dart';
 
 class SpecialTextFormField extends Theme {
   SpecialTextFormField({
@@ -35,7 +34,7 @@ class SpecialTextFormField extends Theme {
           key: key,
           data: Theme.of(context).copyWith(
             colorScheme: ThemeData().colorScheme.copyWith(
-                  primary: color ?? MyColors.instance.black,
+                  primary: color ?? Colors.black,
                 ),
           ),
           child: TextFormField(
@@ -45,7 +44,7 @@ class SpecialTextFormField extends Theme {
             onChanged: onChanged,
             initialValue: initialValue,
             onTap: onTap,
-            cursorColor: color ?? MyColors.instance.black,
+            cursorColor: color ?? Colors.black,
             obscureText: obscureText,
             decoration: InputDecoration(
               prefixIcon: prefixIcon,
@@ -54,7 +53,7 @@ class SpecialTextFormField extends Theme {
               labelStyle: labelStyle ??
                   context.textTheme.subtitle1!.copyWith(
                       fontWeight: FontWeight.w700,
-                      color: MyColors.instance.grey),
+                      color: Colors.grey),
               floatingLabelStyle: context.textTheme.subtitle1!.copyWith(
                 fontWeight: FontWeight.w700,
               ),
@@ -62,7 +61,7 @@ class SpecialTextFormField extends Theme {
               hintStyle: hintStyle ??
                   context.textTheme.subtitle2!.copyWith(
                     fontWeight: FontWeight.w700,
-                    color: MyColors.instance.grey6
+                    color: Colors.grey.shade600
                   ),
               enabledBorder: enabledBorder,
               focusedBorder: focusedBorder,

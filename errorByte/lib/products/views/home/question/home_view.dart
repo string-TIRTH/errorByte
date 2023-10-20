@@ -5,7 +5,6 @@ import '../../../../uikit/decoration/special_container_decoration.dart';
 import '../../../../core/base/base_singleton.dart';
 import '../../../../features/components/textformfield/default_text_form_field.dart';
 import '../../../../core/extensions/ui_extensions.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../../uikit/button/special_button.dart';
 import '../../../models/question_model.dart';
 import '../../../viewmodels/question_view_model.dart';
@@ -49,14 +48,14 @@ class HomeView extends StatelessWidget with BaseSingleton {
 
   Text _appBartitle(BuildContext context) {
     return Text(
-      AppLocalizations.of(context)!.questionsTitle,
-      style: context.textTheme.headline6,
-    );
+      "ErrorByte",
+      style: TextStyle(color: Colors.green) ,
+      );
   }
 
   Widget _appBarAction(BuildContext context) {
     return SpecialButton(
-      buttonLabel: AppLocalizations.of(context)!.askQuestion,
+      buttonLabel: "Ask Question",
       borderRadius: context.borderRadius2x,
       onTap: () => _goToaskQuestionView(context),
     );
@@ -98,7 +97,7 @@ class HomeView extends StatelessWidget with BaseSingleton {
       decoration: SpecialContainerDecoration(context: context),
       alignment: context.alignmentCenter,
       child: Text(
-        AppLocalizations.of(context)!.emptyQuestion,
+        "The questions has not asked yet!",
         style: context.textTheme.headline6,
         textAlign: context.taCenter,
       ),
@@ -111,10 +110,10 @@ class HomeView extends StatelessWidget with BaseSingleton {
       padding: context.padding2x,
       child: DefaultTextFormField(
         context: context,
-        labelText: AppLocalizations.of(context)!.searchLabel,
+        labelText: "Search Question",
         prefixIcon: icons.search,
         filled: filled,
-        fillColor: colors.white,
+        fillColor: Colors.white,
         controller: _questionController,
         onChanged: pv.searchQuestion,
       ),
@@ -125,7 +124,7 @@ class HomeView extends StatelessWidget with BaseSingleton {
     return FadeInUp(
       child: Container(
         padding: context.padding1x,
-        color: colors.yellow1.withOpacity(0.65),
+        color: Colors.cyanAccent.shade100.withOpacity(0.2),
         child: _questionList(pv),
       ),
     );
@@ -200,7 +199,7 @@ class HomeView extends StatelessWidget with BaseSingleton {
       questionTitle,
       style: context.textTheme.subtitle1!.copyWith(
         fontWeight: context.fw600,
-        color: colors.blue6,
+        color: Colors.blue.shade600,
       ),
     );
   }
@@ -219,12 +218,12 @@ class HomeView extends StatelessWidget with BaseSingleton {
               TextSpan(
                 text: usernameText,
                 style:
-                    context.textTheme.subtitle2!.copyWith(color: colors.blue6),
+                    context.textTheme.subtitle2!.copyWith(color: Colors.blue.shade600),
               ),
               TextSpan(
                 text: createdTime,
                 style: context.textTheme.subtitle2!.copyWith(
-                  color: colors.black45,
+                  color: Colors.black45,
                   fontWeight: context.fw500,
                 ),
               ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../color/my_colors.dart';
 
 class MyTexts {
   static MyTexts? _instance;
@@ -15,8 +14,8 @@ class MyTexts {
 
   MyTexts.init();
 
-  MyColors get _colors => MyColors.instance;
-  Color get _textColor => _colors.black;
+  // MyColors get _colors => MyColors.instance;
+  Color get _textColor => Colors.black;
   String get _fontFamily => 'Roboto';
 
   TextTheme get textTheme => TextTheme(
@@ -98,7 +97,7 @@ class MyTexts {
           fontStyle: FontStyle.normal,
         ),
         button: TextStyle(
-          color: _colors.white,
+          color: Colors.white,
           fontSize: 16,
           fontWeight: FontWeight.w700,
           fontFamily: _fontFamily,

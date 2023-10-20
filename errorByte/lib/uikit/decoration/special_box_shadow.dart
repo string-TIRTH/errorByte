@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../core/theme/color/my_colors.dart';
-
 // Component that provides shadow in the design
 
 class SpecialBoxShadow extends BoxShadow {
@@ -9,7 +7,7 @@ class SpecialBoxShadow extends BoxShadow {
     Color? color,
     double? blurRadius,
   }) : super(
-          color: color ?? MyColors.instance.primaryBoxShadowColor,
+          color: color ?? Color(0x1a208dfe),
           offset: const Offset(0, 0),
           blurRadius: blurRadius ?? 30,
           spreadRadius: 0,

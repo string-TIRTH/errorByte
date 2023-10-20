@@ -3,7 +3,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:stack_overflow_clone/core/base/base_singleton.dart';
 import 'package:stack_overflow_clone/products/views/common/navbar_view.dart';
@@ -33,9 +32,9 @@ class LoginViewModel extends ChangeNotifier with BaseSingleton {
     globals.getAlertDialog(
       context: context,
       result: result,
-      successTitle: AppLocalizations.of(context)!.loginSuccess,
-      fail400Title: AppLocalizations.of(context)!.loginFail,
-      fail500Title: AppLocalizations.of(context)!.loginFail,
+      successTitle: "Login Successful!",
+      fail400Title: "Login Failed",
+      fail500Title: "Login Failed",
       onTap: () {
         Navigator.pushAndRemoveUntil(
           context,

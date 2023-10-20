@@ -55,12 +55,12 @@ class NavbarView extends StatelessWidget with BaseSingleton {
     return FadeInUp(
       child: BottomNavigationBar(
         selectedIconTheme: IconThemeData(
-          color: colors.orange,
+          color: Color.fromRGBO(33, 47, 61 , 0.9),
           size: selectedIconSize,
         ),
-        selectedItemColor: colors.orange,
+        selectedItemColor: Color.fromRGBO(33, 47, 61 , 0.9),
         unselectedIconTheme: IconThemeData(
-          color: colors.grey,
+          color: Color.fromRGBO(128, 139, 150 , 0.9),
           size: unselectedIconSize,
         ),
         selectedLabelStyle:

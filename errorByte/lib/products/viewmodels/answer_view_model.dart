@@ -3,7 +3,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:stack_overflow_clone/core/base/base_singleton.dart';
 import 'package:stack_overflow_clone/core/helpers/api.dart';
@@ -51,9 +50,9 @@ class AnswerViewModel extends ChangeNotifier with BaseSingleton {
     globals.getAlertDialog(
       context: _api.currentContext,
       result: result,
-      successTitle: AppLocalizations.of(context)!.success,
-      fail400Title: AppLocalizations.of(context)!.fail,
-      fail500Title: AppLocalizations.of(context)!.fail,
+      successTitle: "SuccessFul!",
+      fail400Title: "Something Went Wrong!",
+      fail500Title: "Something Went Wrong!",
       onTap: () {
         Navigator.pop(context);
         Navigator.pop(context);
@@ -87,9 +86,9 @@ class AnswerViewModel extends ChangeNotifier with BaseSingleton {
 
     globals.getSnackBar(
       result: result,
-      successContent: AppLocalizations.of(context)!.successEdit,
-      error404Content: AppLocalizations.of(context)!.unsuccessEdit,
-      error500Content: AppLocalizations.of(context)!.unsuccessMessage,
+      successContent: "Your information has been successfully updated!",
+      error404Content: "Your information could not be successfully updated!",
+      error500Content: "Your information could not be successfully updated!",
       context: context,
     );
 
@@ -126,9 +125,9 @@ class AnswerViewModel extends ChangeNotifier with BaseSingleton {
     ).then((value) {
       globals.getSnackBar(
         result: result,
-        successContent: AppLocalizations.of(context)!.deleteQuestionSuccess,
+        successContent: "This answer was successfully deleted!",
         error404Content: result?.data["message"],
-        error500Content: AppLocalizations.of(context)!.unsuccessMessage,
+        error500Content: "Something Went Wrong",
         context: context,
       );
     });
@@ -148,12 +147,12 @@ class AnswerViewModel extends ChangeNotifier with BaseSingleton {
     globals.getSnackBar(
       result: result,
       successContent: isFav
-          ? AppLocalizations.of(context)!.answerFavSuccess
-          : AppLocalizations.of(context)!.answerUnfavSuccess,
+          ? "The answer was successfully liked!"
+          : "The answer was already liked!",
       error404Content: isFav
-          ? AppLocalizations.of(context)!.answerFavUnsuccess
-          : AppLocalizations.of(context)!.answerUnfavUnsuccess,
-      error500Content: AppLocalizations.of(context)!.unsuccessMessage,
+          ? "The answer was successfully uncommented!"
+          : "The answer was already uncommented!",
+      error500Content: "Something Went Wrong!",
       context: context,
     );
 
@@ -168,13 +167,13 @@ class AnswerViewModel extends ChangeNotifier with BaseSingleton {
     if (answerModel.fav != null) {
       for (var e in answerModel.fav!) {
         if (upv.user.sId == e.sId) {
-          return colors.redAccent;
+          return Colors.redAccent;
         } else
-          return colors.grey;
+          return Colors.grey;
       }
     } else
-      return colors.grey;
-    return colors.grey;
+      return Colors.grey;
+    return Colors.grey;
   }
 
   Future<void> answerFavOperation({
@@ -185,7 +184,7 @@ class AnswerViewModel extends ChangeNotifier with BaseSingleton {
     required String aId,
   }) async {
     final Color color = isFavAnswer(answerModel, context);
-    if (color == colors.redAccent) {
+    if (color == Colors.redAccent) {
       await pv.favUnFavAnswer(
         qId: qId,
         aId: aId,

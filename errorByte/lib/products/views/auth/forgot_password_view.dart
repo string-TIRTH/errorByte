@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:async_button/async_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import '../../../core/base/base_singleton.dart';
@@ -37,7 +36,7 @@ class ForgotPasswordView extends StatelessWidget with BaseSingleton {
   AppBar _appBar(BuildContext context) {
     return AppBar(
       title: FadeInDown(
-        child: Text(AppLocalizations.of(context)!.forgotPassword),
+        child: Text("Forgot Password"),
       ),
     );
   }
@@ -60,7 +59,7 @@ class ForgotPasswordView extends StatelessWidget with BaseSingleton {
   }
 
   SvgPicture _logo(BuildContext context) =>
-      SvgPicture.asset(AppLocalizations.of(context)!.logoSvg);
+      SvgPicture.asset("assets/images/logo3.svg");
 
   Container _forgotPasswordSection(BuildContext context) {
     return Container(
@@ -69,7 +68,7 @@ class ForgotPasswordView extends StatelessWidget with BaseSingleton {
       child: Column(
         children: [
           context.emptySizedHeightBox1x,
-          Text(AppLocalizations.of(context)!.forgotPasswordDesc),
+          Text("Forgot your account’s password or having trouble logging into your Team? Enter your email address and we’ll send you a recovery link."),
           context.emptySizedHeightBox2x,
           _emailField(context),
           context.emptySizedHeightBox3x,
@@ -82,7 +81,7 @@ class ForgotPasswordView extends StatelessWidget with BaseSingleton {
   DefaultTextFormField _emailField(BuildContext context) {
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.emailLabel,
+      labelText: "Email",
       prefixIcon: icons.email,
       controller: _emailController,
     );
@@ -94,7 +93,7 @@ class ForgotPasswordView extends StatelessWidget with BaseSingleton {
       child: SpecialAsyncButton(
         onTap: (btnStateController) async =>
             await _sendRecoveryMail(btnStateController, context),
-        buttonLabel: AppLocalizations.of(context)!.sendRecoveryMail,
+        buttonLabel: "Send Recovery Mail",
         borderRadius: context.borderRadius2x,
       ),
     );

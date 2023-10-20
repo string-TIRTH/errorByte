@@ -3,7 +3,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/base/base_singleton.dart';
 import '../../../../core/enums/alert_enum.dart';
@@ -62,16 +61,16 @@ class MyQuestionsView extends StatelessWidget with BaseSingleton {
     uiGlobals.showAlertDialog(
       context: context,
       alertEnum: AlertEnum.AREUSURE,
-      contentTitle: AppLocalizations.of(context)!.areYouSure,
-      contentSubtitle: AppLocalizations.of(context)!.deleteQuestionContent,
-      buttonLabel: AppLocalizations.of(context)!.okButton,
+      contentTitle: "Are you sure?",
+      contentSubtitle: "Your question and the answers given to the question will be deleted.\nAre you sure?",
+      buttonLabel: "OK",
       onTap: () async {
         final pv = Provider.of<QuestionViewModel>(context, listen: false);
         await pv.deleteQuestion(id: "${item.sId}").then((value) {
           Navigator.pop(context);
         });
       },
-      secondButtonLabel: AppLocalizations.of(context)!.cancelButton,
+      secondButtonLabel: "CANCEL",
     );
   }
 
@@ -98,11 +97,11 @@ class MyQuestionsView extends StatelessWidget with BaseSingleton {
   }
 
   Text _appBarTitle(BuildContext context) =>
-      Text(AppLocalizations.of(context)!.myQuestions);
+      Text("My Questions");
 
   SpecialButton _appBarAction(BuildContext context) {
     return SpecialButton(
-      buttonLabel: AppLocalizations.of(context)!.askQuestion,
+      buttonLabel: "Ask Question",
       borderRadius: context.borderRadius2x,
       onTap: () => _goToAskQuestion(context),
     );
@@ -139,7 +138,7 @@ class MyQuestionsView extends StatelessWidget with BaseSingleton {
         decoration: SpecialContainerDecoration(context: context),
         alignment: context.alignmentCenter,
         child: Text(
-          AppLocalizations.of(context)!.emptyQuestion,
+          "The questions has not asked yet!",
           style: context.textTheme.headline6,
           textAlign: context.taCenter,
         ),
@@ -153,10 +152,10 @@ class MyQuestionsView extends StatelessWidget with BaseSingleton {
       padding: context.padding2x,
       child: DefaultTextFormField(
         context: context,
-        labelText: AppLocalizations.of(context)!.searchLabel,
+        labelText: "Search",
         prefixIcon: icons.search,
         filled: filled,
-        fillColor: colors.white,
+        fillColor: Colors.white,
         controller: _questionController,
         onChanged: pv.searchQuestion,
       ),
@@ -171,7 +170,7 @@ class MyQuestionsView extends StatelessWidget with BaseSingleton {
     }
     return Container(
       padding: context.padding1x,
-      color: colors.yellow1.withOpacity(0.65),
+      color: Colors.yellow.shade100.withOpacity(0.65),
       child: ListView.separated(
         shrinkWrap: shrinkWrap,
         physics: const NeverScrollableScrollPhysics(),
@@ -231,7 +230,7 @@ class MyQuestionsView extends StatelessWidget with BaseSingleton {
       questionTitle,
       style: context.textTheme.subtitle1!.copyWith(
         fontWeight: context.fw600,
-        color: colors.blue6,
+        color: Colors.blue.shade600,
       ),
     );
   }
@@ -243,14 +242,14 @@ class MyQuestionsView extends StatelessWidget with BaseSingleton {
           onPressed: () => _goToQuestionEdit(context, item),
           icon: Icon(
             Icons.edit,
-            color: colors.blueAccent,
+            color: Colors.blueAccent,
           ),
         ),
         IconButton(
           onPressed: () async => await _deleteQuestion(context, item),
           icon: Icon(
             Icons.delete,
-            color: colors.redAccent,
+            color: Colors.redAccent,
           ),
         ),
       ],

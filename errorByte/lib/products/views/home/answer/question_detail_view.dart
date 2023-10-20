@@ -2,7 +2,6 @@
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:stack_overflow_clone/features/components/container/question_or_answer_section.dart';
 import 'package:stack_overflow_clone/features/components/row/like_and_user_info.dart';
@@ -70,11 +69,11 @@ class QuestionDetailView extends StatelessWidget with BaseSingleton {
   }
 
   Text _appBarTitle(BuildContext context) =>
-      Text(AppLocalizations.of(context)!.questionDetail);
+      Text("Question Detial");
 
   SpecialButton _appBarAction(BuildContext context) {
     return SpecialButton(
-      buttonLabel: AppLocalizations.of(context)!.addAnswer,
+      buttonLabel: "Add Answer",
       borderRadius: context.borderRadius2x,
       onTap: () => _goToAddAnswer(context),
     );
@@ -134,7 +133,7 @@ class QuestionDetailView extends StatelessWidget with BaseSingleton {
       children: [
         _questionDateInfo(context, "${question.createdAt}"),
         context.emptySizedWidthBox2x,
-        _questionDateInfo(context, "${question.modifiedAt}")
+        // _questionDateInfo(context, "${question.modifiedAt}")
       ],
     );
   }
@@ -143,8 +142,8 @@ class QuestionDetailView extends StatelessWidget with BaseSingleton {
     return Row(
       children: [
         Text(
-          AppLocalizations.of(context)!.modified,
-          style: context.textTheme.subtitle2!.copyWith(color: colors.black54),
+          "Asked On",
+          style: context.textTheme.subtitle2!.copyWith(color: Colors.black54),
         ),
         context.emptySizedWidthBox1x,
         Text(
@@ -194,7 +193,7 @@ class QuestionDetailView extends StatelessWidget with BaseSingleton {
       decoration: SpecialContainerDecoration(context: context),
       alignment: context.alignmentCenter,
       child: Text(
-        AppLocalizations.of(context)!.emptyQuestion,
+        "The questions has not asked yet!",
         style: context.textTheme.headline6,
         textAlign: context.taCenter,
       ),

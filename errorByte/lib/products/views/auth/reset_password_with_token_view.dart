@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:async_button/async_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import '../../../core/base/base_singleton.dart';
 import '../../../core/extensions/ui_extensions.dart';
@@ -46,7 +45,7 @@ class ResetPasswordWithTokenView extends StatelessWidget with BaseSingleton {
   AppBar _appBar(BuildContext context) {
     return AppBar(
       title: FadeInDown(
-        child: Text(AppLocalizations.of(context)!.resetPassword),
+        child: Text("Reset Password"),
       ),
     );
   }
@@ -91,7 +90,7 @@ class ResetPasswordWithTokenView extends StatelessWidget with BaseSingleton {
 
   Text _changePasswordDesc(BuildContext context) {
     return Text(
-      AppLocalizations.of(context)!.youCanChangePasswordThisPage,
+      "You can change password this page.",
       style: context.textTheme.subtitle1!.copyWith(fontWeight: context.fw700),
     );
   }
@@ -100,7 +99,7 @@ class ResetPasswordWithTokenView extends StatelessWidget with BaseSingleton {
     bool obscureText = true;
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.passwordLabel,
+      labelText: "Password",
       prefixIcon: icons.lock,
       controller: _passwordController,
       obscureText: obscureText,
@@ -112,7 +111,7 @@ class ResetPasswordWithTokenView extends StatelessWidget with BaseSingleton {
     bool obscureText = true;
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.passwordLabelV2,
+      labelText: "Confirm Password",
       prefixIcon: icons.lock,
       controller: _passwordV2Controller,
       obscureText: obscureText,
@@ -127,7 +126,7 @@ class ResetPasswordWithTokenView extends StatelessWidget with BaseSingleton {
       child: SpecialAsyncButton(
         onTap: (btnStateController) async =>
             await _changePassword(btnStateController, context),
-        buttonLabel: AppLocalizations.of(context)!.changePassword,
+        buttonLabel: "Change Password",
         borderRadius: context.borderRadius2x,
       ),
     );

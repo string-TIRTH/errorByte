@@ -1,7 +1,6 @@
 // ignore_for_file: avoid_print, use_build_context_synchronously
 
 import 'dart:io';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:stack_overflow_clone/core/base/base_singleton.dart';
 import 'package:stack_overflow_clone/core/helpers/api.dart';
@@ -49,9 +48,9 @@ class UserViewModel extends ChangeNotifier with BaseSingleton {
     );
     globals.getSnackBar(
       result: result,
-      successContent: AppLocalizations.of(context)!.successEdit,
-      error404Content: AppLocalizations.of(context)!.unsuccessEdit,
-      error500Content: AppLocalizations.of(context)!.unsuccessMessage,
+      successContent: "Your information has been successfully updated!",
+      error404Content: "Something Went Wrong!",
+      error500Content: "Something Went Wrong!",
       context: context,
     );
     await getMyDetails;

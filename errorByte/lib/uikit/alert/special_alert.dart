@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../../core/base/base_singleton.dart';
 import '../../core/extensions/ui_extensions.dart';
-import '../../core/theme/color/my_colors.dart';
 import '../button/special_button.dart';
 
 class SpecialAlert extends StatelessWidget with BaseSingleton {
@@ -50,7 +49,7 @@ class SpecialAlert extends StatelessWidget with BaseSingleton {
                     Navigator.pop(context);
                   },
               style: ElevatedButton.styleFrom(
-                backgroundColor: colors.redAccent,
+                backgroundColor: Colors.redAccent,
                 shape: RoundedRectangleBorder(
                     borderRadius: context.borderRadius10x),
               ),
@@ -97,7 +96,7 @@ class SpecialAlert extends StatelessWidget with BaseSingleton {
         backgroundColor: circleAvatarBgColor,
         child: Icon(
           icon,
-          color: MyColors.instance.white,
+          color: Colors.white,
           size: 60,
         ),
       ),

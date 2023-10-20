@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:async_button/async_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/base/base_singleton.dart';
 import '../../../../core/extensions/ui_extensions.dart';
@@ -53,7 +52,7 @@ class EditAnswerView extends StatelessWidget with BaseSingleton {
   AppBar _appBar(BuildContext context) {
     return AppBar(
       title: FadeInDown(
-        child: Text(AppLocalizations.of(context)!.editAnswer),
+        child: Text("Edit Answer"),
       ),
     );
   }
@@ -80,7 +79,7 @@ class EditAnswerView extends StatelessWidget with BaseSingleton {
 
   Text _title(BuildContext context) {
     return Text(
-      AppLocalizations.of(context)!.yourAnswer,
+      "Your Answer",
       style: context.textTheme.headline6,
     );
   }
@@ -89,10 +88,10 @@ class EditAnswerView extends StatelessWidget with BaseSingleton {
     return Container(
       decoration: SpecialContainerDecoration(
         context: context,
-        color: colors.orange1,
+        color: Colors.orange.shade100,
       ),
       padding: context.padding2x,
-      child: Text(AppLocalizations.of(context)!.addAnswerInfo),
+      child: Text("Your Answer will be visible to everyone... so make sure you do not violate privacy & policy"),
     );
   }
 
@@ -114,7 +113,7 @@ class EditAnswerView extends StatelessWidget with BaseSingleton {
 
   Text _answerTitle(BuildContext context) {
     return Text(
-      AppLocalizations.of(context)!.contentTitle,
+      "Content",
       style: context.textTheme.subtitle1!.copyWith(
         fontWeight: context.fw700,
       ),
@@ -124,7 +123,7 @@ class EditAnswerView extends StatelessWidget with BaseSingleton {
   DefaultTextFormField _answerField(BuildContext context) {
     return DefaultTextFormField(
       context: context,
-      labelText: AppLocalizations.of(context)!.answerLabel,
+      labelText: "Answer",
       initialValue: answer.content,
       onChanged: (content) {
         answer.content = content;
@@ -137,7 +136,7 @@ class EditAnswerView extends StatelessWidget with BaseSingleton {
     return SpecialAsyncButton(
       onTap: (btnStateController) async =>
           await _editAnswer(btnStateController, context),
-      buttonLabel: AppLocalizations.of(context)!.editYourAnswer,
+      buttonLabel: "Edit Answer",
       borderRadius: context.borderRadius2x,
     );
   }

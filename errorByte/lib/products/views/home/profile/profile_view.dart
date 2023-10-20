@@ -1,6 +1,5 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import '../../../../features/components/row/profile_items.dart';
@@ -47,9 +46,9 @@ class ProfileView extends StatelessWidget with BaseSingleton {
     uiGlobals.showAlertDialog(
       context: context,
       alertEnum: AlertEnum.AREUSURE,
-      contentTitle: AppLocalizations.of(context)!.areYouSure,
-      contentSubtitle: AppLocalizations.of(context)!.logoutContent,
-      buttonLabel: AppLocalizations.of(context)!.okButton,
+      contentTitle: "Are you sure?",
+      contentSubtitle: "Logout",
+      buttonLabel: "OK",
       onTap: () {
         Token.deleteAll();
         Navigator.pushAndRemoveUntil(
@@ -60,7 +59,7 @@ class ProfileView extends StatelessWidget with BaseSingleton {
           (route) => false,
         );
       },
-      secondButtonLabel: AppLocalizations.of(context)!.cancelButton,
+      secondButtonLabel: "CANCEL",
     );
   }
 
@@ -102,12 +101,12 @@ class ProfileView extends StatelessWidget with BaseSingleton {
   }
 
   Text _appBarTitle(BuildContext context) =>
-      Text(AppLocalizations.of(context)!.profileAppBarTitle);
+      Text("Profile");
 
   SpecialButton _appBarAction(BuildContext context) {
     return SpecialButton(
       borderRadius: context.borderRadius2x,
-      buttonLabel: AppLocalizations.of(context)!.editProfile,
+      buttonLabel: "Edit Profile",
       onTap: () => _goToProfileEdit(context),
     );
   }
@@ -120,7 +119,7 @@ class ProfileView extends StatelessWidget with BaseSingleton {
           String memberDate = globals.formatDate(user.createdAt);
           String place = user.place ?? "null";
           String title =
-              user.title ?? AppLocalizations.of(context)!.noAboutMeHasBeenYet;
+              user.title ?? "No about me has been yet";
           int answerLength = user.answer?.length ?? 0;
           int questionLength = user.question?.length ?? 0;
           return ListView(
@@ -152,7 +151,7 @@ class ProfileView extends StatelessWidget with BaseSingleton {
         height: context.dynamicHeight(0.1),
         padding: context.padding2x,
         decoration: SpecialContainerDecoration(context: context),
-        child: SvgPicture.asset(AppLocalizations.of(context)!.iconSvg),
+        child: Image.asset('assets/images/icon3.png'),
       ),
     );
   }
@@ -189,7 +188,7 @@ class ProfileView extends StatelessWidget with BaseSingleton {
       children: [
         Icon(
           Icons.date_range,
-          color: colors.grey,
+          color: Colors.grey,
           size: 16,
         ),
         context.emptySizedWidthBox2x,
@@ -217,7 +216,7 @@ class ProfileView extends StatelessWidget with BaseSingleton {
       children: [
         Icon(
           Icons.place,
-          color: colors.grey,
+          color: Colors.grey,
           size: 16,
         ),
         context.emptySizedWidthBox2x,
@@ -234,11 +233,11 @@ class ProfileView extends StatelessWidget with BaseSingleton {
         children: [
           Icon(
             Icons.language,
-            color: colors.grey,
+            color: Colors.grey,
             size: 16,
           ),
           context.emptySizedWidthBox2x,
-          Text(AppLocalizations.of(context)!.website),
+          Text("Website"),
         ],
       ),
     );
@@ -246,8 +245,8 @@ class ProfileView extends StatelessWidget with BaseSingleton {
 
   ProfileItems _aboutAndLogoutSection(BuildContext context, String title) {
     return ProfileItems(
-      title: AppLocalizations.of(context)!.about,
-      action: AppLocalizations.of(context)!.logout,
+      title: "About",
+      action: "Log out",
       acitonOnTap: () => _logout(context),
       description: title,
     );
@@ -256,10 +255,10 @@ class ProfileView extends StatelessWidget with BaseSingleton {
   ProfileItems _answerSection(BuildContext context, int answerLength) {
     String description = answerLength != 0
         ? "You have answered $answerLength question."
-        : AppLocalizations.of(context)!.noAnswered;
+        : "You have not answered any questions.";
     return ProfileItems(
-      title: AppLocalizations.of(context)!.answers,
-      action: AppLocalizations.of(context)!.seeAll,
+      title: "Answers",
+      action: "See All",
       acitonOnTap: () => _goToMyAnswers(context),
       description: description,
     );
@@ -268,10 +267,10 @@ class ProfileView extends StatelessWidget with BaseSingleton {
   ProfileItems _questionsSection(BuildContext context, int questionLength) {
     String description = questionLength != 0
         ? "You have asked $questionLength question."
-        : AppLocalizations.of(context)!.noAsked;
+        : "You have not asked any questions.";
     return ProfileItems(
-      title: AppLocalizations.of(context)!.questionsTitle,
-      action: AppLocalizations.of(context)!.seeAll,
+      title: "Questions",
+      action: "See All",
       acitonOnTap: () => _goToMyQuestions(context),
       description: description,
     );

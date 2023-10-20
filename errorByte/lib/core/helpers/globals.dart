@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 
 import '../base/base_singleton.dart';
@@ -56,7 +55,7 @@ class Globals with BaseSingleton {
         alertEnum: AlertEnum.SUCCESS,
         contentTitle: successTitle,
         contentSubtitle: result?.data['message'],
-        buttonLabel: AppLocalizations.of(context)!.okButton,
+        buttonLabel: "OK",
         onTap: onTap,
       );
     } else if (result?.statusCode == HttpStatus.badRequest) {
@@ -65,7 +64,7 @@ class Globals with BaseSingleton {
         alertEnum: AlertEnum.ERROR,
         contentTitle: fail400Title,
         contentSubtitle: result?.data['message'],
-        buttonLabel: AppLocalizations.of(context)!.okButton,
+        buttonLabel: "OK",
       );
     } else if (result == null ||
         result.statusCode == HttpStatus.internalServerError) {
@@ -73,8 +72,8 @@ class Globals with BaseSingleton {
         context: context,
         alertEnum: AlertEnum.ERROR,
         contentTitle: fail500Title,
-        contentSubtitle: AppLocalizations.of(context)!.unsuccessMessage,
-        buttonLabel: AppLocalizations.of(context)!.okButton,
+        contentSubtitle: "Something Went Wrong",
+        buttonLabel: "OK",
       );
     }
   }

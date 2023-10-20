@@ -1,5 +1,4 @@
 import '../../core/extensions/ui_extensions.dart';
-import '../../core/theme/color/my_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'special_box_shadow.dart';
@@ -16,7 +15,7 @@ class SpecialContainerDecoration extends BoxDecoration {
     double? blurRadius,
     DecorationImage? image,
   }) : super(
-          color: color ?? MyColors.instance.white,
+          color: color ?? Colors.white,
           borderRadius: borderRadius ?? context.borderRadius4x,
           boxShadow: boxShadow ?? [SpecialBoxShadow(blurRadius: blurRadius)],
           image: image,
